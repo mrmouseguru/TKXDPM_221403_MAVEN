@@ -4,6 +4,7 @@ public class AddUseCaseControl {
     //fields
     AddEntity addEntity = null;
     UIConsoleOutput uiOutput = null;
+    private ResponseError resError = null;
 
     public AddUseCaseControl(){
         uiOutput = new UIConsoleOutput();
@@ -21,7 +22,7 @@ public class AddUseCaseControl {
             //hợp lệ
         }else{
             //không hợp lệ
-            ResponseError resError = new ResponseError();
+            resError = new ResponseError();
             resError.content = "ERROR_INPUT";
             uiOutput.showError(resError);
         }
@@ -41,5 +42,9 @@ public class AddUseCaseControl {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public ResponseError getResError() {
+        return resError;
     }
 }
