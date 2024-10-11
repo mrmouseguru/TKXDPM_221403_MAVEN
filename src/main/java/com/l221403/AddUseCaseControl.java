@@ -1,16 +1,22 @@
 package com.l221403;
 
-public class AddUseCaseControl {
+public class AddUseCaseControl implements InputBoundary {
     //fields
     AddEntity addEntity = null;
-    UIConsoleOutput uiOutput = null;
+    //UIConsoleOutput uiOutput = null;
+    OutputBoundary uiOutput = null;
     private ResponseError resError = null;
+
+    public AddUseCaseControl(OutputBoundary uiBoundary){
+        this.uiOutput = uiBoundary;
+    }
 
     public AddUseCaseControl(){
         uiOutput = new UIConsoleOutput();
     }
 
     //methods
+    @Override
     public void execute (RequestData reqData){
 
         //nhận 2 số
