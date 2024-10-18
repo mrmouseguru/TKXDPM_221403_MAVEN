@@ -3,7 +3,7 @@ package student_app.ui;
 import student_app.usecase.AddStudentOutputBoundary;
 import student_app.usecase.dto.AddStudentOutputDTO;
 
-public class AddStudentPresenterId implements AddStudentOutputBoundary{
+public class AddStudentPresenter implements AddStudentOutputBoundary{
     private int newStudentId;
     private AddStudentOutputDTO  addStudentOutputDTO= null;
 
@@ -20,6 +20,7 @@ public class AddStudentPresenterId implements AddStudentOutputBoundary{
     @Override
     public void present(AddStudentOutputDTO addStudentOutputDTO) {
         this.addStudentOutputDTO = addStudentOutputDTO;
+        StudentDetailsForm studentDetailsForm = new StudentDetailsForm(addStudentOutputDTO);
         
     }
 

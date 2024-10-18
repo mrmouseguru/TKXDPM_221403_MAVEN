@@ -8,7 +8,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import student_app.database.AddStudentDAOMemory;
-import student_app.ui.AddStudentPresenterId;
+import student_app.ui.AddStudentPresenter;
 import student_app.usecase.AddStudentInputBoundary;
 import student_app.usecase.AddStudentUseCase;
 import student_app.usecase.dto.AddStudentInputDTO;
@@ -21,7 +21,7 @@ public class AddStudent {
     public void testAddStudent() {
 
         AddStudentDAOMemory addStudentDAOMemory = new AddStudentDAOMemory();
-        AddStudentPresenterId addStudentPresenter = new AddStudentPresenterId();
+        AddStudentPresenter addStudentPresenter = new AddStudentPresenter();
         //viet test case
         AddStudentInputBoundary addStudentInputBoundary = null;
         addStudentInputBoundary = new AddStudentUseCase(addStudentDAOMemory, 
